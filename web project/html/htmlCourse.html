@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/htmlCourse.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body onload="move();getSRC();">
+    <!-- header section -->
+
+    <header class="header-active" id="header">
+      <a href="index.html" class="logo"
+        ><i class="fas fa-graduation-cap"><i class="name">developpy</i></i>
+      </a>
+      <nav id="nav" class="navbar">
+        <ul>
+          <li>
+            <a
+              onclick="actions(0,'w3shoolHTML');"
+              id="w3shoolHTML"
+              href="https://www.w3schools.com/"
+              target="_blank"
+              >W3schoolHTML</a
+            >
+          </li>
+          <li>
+            <a
+              id="exercices"
+              onclick="actions(0,'exercices');"
+              href="#Exercices"
+              >Exercices</a
+            >
+          </li>
+          <li>
+            <a
+              onclick="actions(0,'quiz');"
+              id="quiz"
+              href="#Quiz"
+              class="pad-16"
+              >Quiz</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="fas fa-bars" id="fa-bars"></div>
+    </header>
+
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <a class="fab"> <i class="fab fa-html5"></i></a>
+        <a id="history" href="#" onclick="actions(1,'history');"
+          >HTML: Historique</a
+        >
+        <a id="marquage" onclick="actions(1,'marquage');" href="#"
+          >Langages de marquage
+        </a>
+        <a onclick="actions(1,'structure');" id="structure" href="#contact"
+          >Structure d’un document HTML5</a
+        >
+        <a onclick="actions(1,'liens');" id="liens" href="#">Les liens</a>
+        <a onclick="actions(1,'images');" id="images" href="#">Les images</a>
+        <a onclick="actions(1,'tableaux');" id="tableaux" href="#"
+          >Les tableaux</a
+        >
+        <a onclick="actions(1,'iframe');" id="iframe" href="#"
+          >Les cadres (iframe)</a
+        >
+        <a onclick="actions(1,'formulaire');" id="formulaire" href="#"
+          >Les formulaires</a
+        >
+        <a onclick="actions(1,'semantique');" id="semantique" href="#"
+          >Nouvelle Sémantique</a
+        >
+      </div>
+    </div>
+    <div id="frameDiv">
+      <iframe name="frame" frameborder="0" id="frame"></iframe>
+    </div>
+
+    <!--  <div class="outer">
+      <div class="inner"><button class="previous">&lt Previous</button></div>
+      <div class="inner">
+        <button class="next">Next <i>&gt</i></button>
+      </div>
+    </div> -->
+
+    <div id="move">
+      <button id="previous" class="previous">&lt Previous</button>
+      <button id="next" class="next">Next <i>&gt</i></button>
+    </div>
+    <script src="../js/htmlCourse.js"></script>
+  </body>
+</html>

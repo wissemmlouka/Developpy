@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web Project</title>
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- header section -->
+    <header class="header" id="header">
+      <a href="#" class="logo"
+        ><i class="fas fa-graduation-cap">developpy</i></a
+      >
+      <nav id="nav" class="navbar">
+        <ul>
+          <li><a id="homeLink" href="#home" class="active">Home</a></li>
+          <li><a id="aboutLink" href="#about">About</a></li>
+          <li><a id="teacherLink" href="#teacher">Teacher</a></li>
+          <li><a id="courseLink" href="#course">Course</a></li>
+          <li><a id="contactLink" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="fas fa-bars" id="fa-bars"></div>
+    </header>
+
+    <!-- home section starts -->
+
+    <section id="home" class="home">
+      <div class="content">
+        <h1>Learn online from home</h1>
+        <p>
+          Education is the process of facilitating learning, or the acquisition
+          of knewledge, skills, values, beliefs, and habits. Educational methods
+          include teaching, training,discussion and direct research!
+        </p>
+        <a href="#"><button>Discover more</button></a>
+      </div>
+
+      <div class="box-container">
+        <div class="box">
+          <i class="fas fa-graduation-cap"></i>
+          <h3>Trending courses</h3>
+        </div>
+
+        <div class="box">
+          <i class="fas fa-fire"></i>
+          <h3>Pratical exercices</h3>
+        </div>
+        <div class="box">
+          <i class="fas fa-award"></i>
+          <h3>Quizs</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- about section -->
+
+    <section id="about" class="about">
+      <h1 class="heading">About us</h1>
+      <h3 class="title">Start your journey with us</h3>
+
+      <div class="row">
+        <div class="content">
+          <h3>
+            Start your journey to a better life with our practical courses
+          </h3>
+          <p>
+            These website help make the process of learning entraining and
+            attractive to the student, especially in today's age.
+          </p>
+          <p>
+            Using HTML (HyperText Markup Language), CSS(Cascadding Style Sheet),
+            JavaScript,we can make learning more easier and in a interresting
+            way .
+          </p>
+          <a href="#"><button>Learn more</button> </a>
+        </div>
+
+        <div class="image">
+          <img src="../images/aboutimage.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Teachers section-->
+
+    <section class="teacher" id="teacher">
+      <h1 class="heading">Our Expert Tutors</h1>
+      <h3 class="title">meet professional trainers</h3>
+
+      <div class="card-container">
+        <div class="card">
+          <img src="../images/hamza.jpg" alt="" />
+          <h3>Maatougi Hamza</h3>
+          <p>HTML/CSS trainer</p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../images/wissem.jpg" alt="" />
+          <h3>Mlouka Wissem</h3>
+          <p>Java script Trainer</p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../images/achref.jpg" alt="" />
+          <h3>Metwi Achref</h3>
+          <p>PHP trainer</p>
+          <div class="icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-github"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- course section -->
+
+    <section id="course" class="course">
+      <h1 class="heading">our courses</h1>
+      <h3 class="title">upgrade your skills with newest courses</h3>
+
+      <div class="box-container">
+        <a
+          onclick="setPageToLocalStorage('htmlCourse');"
+          href="htmlCourse.html"
+        >
+          <div class="box">
+            <i class="fab fa-html5"></i>
+            <h3>html5</h3>
+            <p>Free online HTML5 course</p>
+          </div>
+        </a>
+        <a onclick="setPageToLocalStorage('cssCourse');" href="cssCourse.html">
+          <div class="box">
+            <i class="fab fa-css3-alt"></i>
+            <h3>css3</h3>
+            <p>Free online CSS3 course</p>
+          </div>
+        </a>
+        <a onclick="setPageToLocalStorage('jsCourse');" href="htmlCourse.html">
+          <div class="box">
+            <i class="fab fa-js-square"></i>
+            <h3>javascript</h3>
+            <p>Free online JavaScript course</p>
+          </div>
+        </a>
+        <a onclick="setPageToLocalStorage('phpCourse');" href="htmlCourse.html">
+          <div class="box">
+            <i class="fas fa-code"></i>
+            <h3>PHP</h3>
+            <p>Free online PHP course</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- review section-->
+
+    <section id="review" class="review">
+      <h1 class="heading">students review</h1>
+      <h3 class="title">what our students says about us</h3>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="../images/haifa.jpg" alt="" />
+          <h3>Bouhachem Haifa</h3>
+          <p>
+            I did JavaScript course .It was a great experience .The brain
+            teasers and assignments,actually the whole lot of content was really
+            good.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="../images/yosr.jpg" alt="" />
+          <h3>Bhija Yosr</h3>
+          <p>
+            Learning was an amizing experience for me. Coding is important no
+            metter which branch you are in. It gives you a better understanding
+            about how to approach a problem.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+
+        <div class="box">
+          <img src="../images/ahmed.jpg" alt="" />
+          <h3>Widad Ahmed</h3>
+          <p>
+            This was my first complete course at coding blocks.I attended the
+            PHP course in winter 2022 and loved it which made me join the full
+            course.
+          </p>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact section-->
+
+    <section class="contact" id="contact">
+      <h1 class="heading">contact us</h1>
+      <h3 class="title">we love conversatios, lets talk.</h3>
+
+      <div class="row">
+        <div class="image">
+          <img src="../images/contactImage.png" alt="" />
+        </div>
+
+        <div class="form-container">
+          <form action="">
+            <input type="text" placeholder="full name" />
+            <input type="email" placeholder="enter your email" />
+            <input type="number" placeholder="phone" />
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="message"
+            ></textarea>
+            <input type="submit" value="message" />
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="icons">
+        <a href="#" class="fab fa-facebook-f"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+        <a href="#" class="fab fa-github"></a>
+        <a href="#" class="fab fa-pinterest"></a>
+      </div>
+
+      <div class="credit">
+        Copyright © 2022 Created by <span>mr. Mlouka Wissem</span> | all rights
+        reserved.
+      </div>
+    </section>
+    <script src="../js/index.js"></script>
+  </body>
+</html>

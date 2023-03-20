@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>style</title>
+    <style>
+      body {
+        margin-left: 4rem;
+      }
+      p {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 1.3rem;
+      }
+      h1 {
+        margin-left: 30%;
+        text-align: center;
+        border-width: 3rem;
+        width: max-content;
+        border: 2px solid rgb(34, 128, 0);
+        border-radius: 0.5rem;
+      }
+      h2 {
+        padding: 1rem;
+      }
+      strong {
+        display: flex;
+        padding: 0.8rem;
+      }
+      .test {
+        display: flex;
+      }
+
+      .example {
+        width: 70%;
+        margin-left: 15px;
+        background-color: #f1f1f1 !important;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        padding: 10px 10px;
+      }
+      .example h4 {
+        font-size: 20px;
+        padding: 0px 0;
+      }
+      .example button {
+        margin-top: 16px;
+        padding: 5px 10px;
+        background-color: #a91b91;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .example button:hover {
+        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+      }
+      .border-green {
+        background-color: white;
+        border-left: 4px solid green;
+        padding-left: 15px;
+        padding: 15px;
+        letter-spacing: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Appliquer un style</h1>
+    <h2>Appel à l'attribut style</h2>
+    <p>
+      ◗ Le moyen le plus simple d'appliquer un style est l'utilisation de
+      l'attribut style dans une balise.
+    </p>
+
+    <p>◗ Ajouter du CSS à une balise donnée</p>
+
+    <p>
+      ◗ Cette solution présente l'inconvénient d'encore mêler des informations
+      sur la présentation et la structure d'un document.
+    </p>
+    <p>◗ Cela rend difficile les mises à jour du code.</p>
+    <p>Exemple:</p>
+
+    <div class="test">
+      <div class="example">
+        <h4>HTML Example:</h4>
+
+        <div id="exemple1" class="border-green">
+          <span style="color: rgb(22, 20, 20)"
+            ><span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">p</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold"
+              >style</span
+            >
+            <span style="color: rgb(25, 22, 22); font-weight: bold">=</span>
+            <span style="color: rgb(59, 84, 199)">"text-indent:15px"</span>
+            <span style="color: green; font-weight: bold">&gt;</span>
+            Un style en ligne...
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/p</span
+            ><span style="color: green; font-weight: bold">&gt;</span>
+          </span>
+        </div>
+
+        <a
+          href="../htmlCourse/editor1.html"
+          onclick="setLocalSorage('exemple1',null,1)"
+          target="_blank"
+        >
+          <button id="btn1">Try it by Yourself</button></a
+        >
+      </div>
+    </div>
+
+    <h2>Feuille de style interne</h2>
+    <p>
+      ◗ Celle-ci sera située dans l'entête, entre les balises &lt;head&gt;
+      &lt;/head&gt;
+    </p>
+
+    <p>
+      ◗ On utilisera alors la balise &lt;style&gt; qui prévient le navigateur
+      que des CSS sont utilisées.
+    </p>
+
+    <p>Exemple:</p>
+
+    <div class="test">
+      <div class="example">
+        <h4>HTML Example:</h4>
+
+        <div id="exemple2" class="border-green">
+          <span style="color: rgb(22, 20, 20)"
+            ><span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">html</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">head</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">style</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+            <span style="color: rgb(255, 208, 0); font-weight: bold">body</span>
+            <span style="color: rgb(93, 0, 255); font-weight: bold">{</span>
+            <span style="color: red; font-weight: bold">font-family</span>
+            <span style="color: rgb(10, 10, 10); font-weight: bold">:</span>
+            <span style="color: rgb(89, 44, 44); font-weight: bold"
+              >sans-serif</span
+            >
+            <span style="color: rgb(10, 10, 10); font-weight: bold">;</span>
+            <span style="color: red; font-weight: bold">background-color</span>
+            <span style="color: rgb(10, 10, 10); font-weight: bold">:</span>
+            <span style="color: rgb(89, 44, 44); font-weight: bold">white</span>
+            <span style="color: rgb(93, 0, 255); font-weight: bold">}</span>
+            <br />
+            <span style="color: rgb(255, 208, 0); font-weight: bold"
+              >h1,h2</span
+            >
+            <span style="color: rgb(93, 0, 255); font-weight: bold">{</span>
+            <span style="color: red; font-weight: bold">color</span>
+            <span style="color: rgb(10, 10, 10); font-weight: bold">:</span>
+            <span style="color: rgb(89, 44, 44); font-weight: bold">blue</span>
+            <span style="color: rgb(93, 0, 255); font-weight: bold">}</span>
+            <br />
+            <span style="color: rgb(255, 208, 0); font-weight: bold">p</span>
+            <span style="color: rgb(93, 0, 255); font-weight: bold">{</span>
+            <span style="color: red; font-weight: bold">text-align</span>
+            <span style="color: rgb(10, 10, 10); font-weight: bold">:</span>
+            <span style="color: rgb(89, 44, 44); font-weight: bold"
+              >justify</span
+            >
+            <span style="color: rgb(93, 0, 255); font-weight: bold">}</span>
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/style</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/head</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">body</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">h1</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            Titre 1
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/h1</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">h2</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            Titre 2
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/h2</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">p</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            Paragraphe
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/p</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/body</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+
+            <br />
+            <span style="color: red; font-weight: bold">&lt;</span
+            ><span style="color: brown">/html</span>
+            <span style="color: rgb(188, 19, 19); font-weight: bold">&gt;</span>
+          </span>
+        </div>
+
+        <a
+          href="../htmlCourse/editor1.html"
+          onclick="setLocalSorage('exemple2',1,1)"
+          target="_blank"
+        >
+          <button id="btn1">Try it by Yourself</button></a
+        >
+      </div>
+    </div>
+
+    <script src="../../js/sendData.js"></script>
+  </body>
+</html>

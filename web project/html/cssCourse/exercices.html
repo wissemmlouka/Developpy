@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices</title>
+
+    <style>
+      body {
+        margin-left: 4rem;
+      }
+      p {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 1.3rem;
+      }
+      h1 {
+        margin-left: 30%;
+        text-align: center;
+        border-width: 3rem;
+        width: max-content;
+        border: 2px solid rgb(34, 128, 0);
+        border-radius: 0.5rem;
+      }
+      h2 {
+        padding: 1rem;
+      }
+      strong {
+        display: flex;
+        padding: 0.8rem;
+      }
+
+      .example {
+        margin: 1rem 1rem 1rem 1rem;
+        text-align: center;
+        width: 30%;
+        background-color: #f1f1f1 !important;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        padding: 10px 10px;
+      }
+      .example h4 {
+        font-size: 20px;
+        padding: 0px 0;
+      }
+      .example button {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        font-size: 18px;
+        width: 50%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .example button:hover {
+        width: 70%;
+        height: 40px;
+        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+      }
+      .exercice {
+        padding: 10px 10px;
+        margin-right: 2rem;
+        margin-bottom: 7px;
+        background-color: #fcfcfc;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+      }
+      li {
+        color: rgb(1, 1, 1);
+        font-size: 1.1rem;
+        padding: 0.5rem;
+      }
+      img {
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Objectif:</h2>
+    <p>
+      Expérimenter avec les notions de base du langage CSS3 (feuilles de styles
+      internes et externes, différents types de sélecteurs, les transformations,
+      les transitions, les animations, etc.)
+    </p>
+    <div class="exercice">
+      <h2>Exerice1:</h2>
+      <p>Soit le document HTML suivant :</p>
+      <img src="../../images/ex1css.jpg" alt="" />
+      <p>
+        Ajouter une feuille de style interne qui contient des sélecteurs
+        permettant d'appliquer les couleurs suivantes :
+      </p>
+      <ul>
+        <li>bleu au corps du document</li>
+        <li>vert aux titres h1</li>
+        <li>bleu pour chaque balise ayant la classe "h1"</li>
+        <li>
+          move pour chaque balises &lt;li&gt; imbriquée dans une balise
+          &lt;ol&gt; ayant un attribut "start"
+        </li>
+        <li>jaune pour la balise ayant l'identifiant "h2"</li>
+        <li>
+          orangé pour chaque balise &lt;li&gt; qui apparait comme le premier
+          élément sous un élément parent
+        </li>
+        <li>
+          rouge pour chaque balise &lt;li&gt; ayant un attribut "title" dont sa
+          valeur commence par 'sel'
+        </li>
+      </ul>
+      <div class="example">
+        <a
+          onclick="setSrcCode(6)"
+          href="../htmlCourse/editor1.html"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+    <div class="exercice">
+      <h2>Exerice2:</h2>
+      <p>
+        Styliser le document HTML de l'exercice 5 relatif au TP1 en tenant
+        compte des consignes suivantes et l'affichage de la figure ci-dessous :
+      </p>
+      <ul>
+        <li>La couleur par défaut du texte est le bleu "navy"</li>
+        <li>Les titres sont en police "Comic Sans MS sans-serif"</li>
+        <li>
+          Les titres de niveau 1 sont de couleur "white" et ayant un
+          arrière-plan de couleur "navy" et une ambre de 5px de couleur "gray"
+        </li>
+        <li>Le texte est en police Arial ou Helvetica (sans-serif)</li>
+        <li>
+          La page contient une image en arrière-plan (image suffisamment large
+          pour ne pas se répliquer horizontalement)
+        </li>
+        <li>
+          Les liens sont colorés en bleu "navy" et les liens déjà visités en
+          "maroon"
+        </li>
+        <li>Les coins du tableau sont arrondis de 5px</li>
+      </ul>
+      <img src="../../images/ex2css.jpg" alt="" />
+      =
+      <div class="example">
+        <a
+          onclick="setSrcCode(7)"
+          href="../htmlCourse/editor1.html"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+
+    <div class="exercice">
+      <h2>Exerice3:</h2>
+      <p>
+        1. En utilisant les propriétés CSS3 nécessaires, réaliser une page de
+        galerie photos. Au survol de la souris, chaque photo se met au premier
+        plan avec une bordure de couleur blanche et une ambre.
+      </p>
+
+      <img src="../../images/ex3css.jpg" alt="" />
+
+      <div class="example">
+        <a
+          onclick="setSrcCode(8)"
+          href="../htmlCourse/editor1.html"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+
+    <div class="exercice">
+      <h2>Exerice4:</h2>
+      <p>
+        Développer un site web avec menu déroulant en utilisant uniquement HTML5
+        et CSS3. Lors du survol sur l'une des figures (home, services,
+        portfolio, etc.), une liste de liens apparaîtra
+      </p>
+
+      <img src="../../images/ex4css.jpg" alt="" />
+
+      <div class="example">
+        <a
+          href="../htmlCourse/editor1.html"
+          onclick="setSrcCode(9)"
+          onclick="setLocalSorage('exemple2',null,1)"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+
+    <script src="../../js/exercices.js"></script>
+  </body>
+</html>

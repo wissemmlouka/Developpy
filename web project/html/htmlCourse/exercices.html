@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices</title>
+
+    <style>
+      body {
+        margin-left: 4rem;
+      }
+      p {
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 1.3rem;
+      }
+      h1 {
+        margin-left: 30%;
+        text-align: center;
+        border-width: 3rem;
+        width: max-content;
+        border: 2px solid rgb(34, 128, 0);
+        border-radius: 0.5rem;
+      }
+      h2 {
+        padding: 1rem;
+      }
+      strong {
+        display: flex;
+        padding: 0.8rem;
+      }
+
+      .example {
+        margin: 1rem 1rem 1rem 1rem;
+        text-align: center;
+        width: 30%;
+        background-color: #f1f1f1 !important;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+        padding: 10px 10px;
+      }
+      .example h4 {
+        font-size: 20px;
+        padding: 0px 0;
+      }
+      .example button {
+        padding: 5px 10px;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        font-size: 18px;
+        width: 50%;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .example button:hover {
+        width: 70%;
+        height: 40px;
+        box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%), 0 4px 20px 0 rgb(0 0 0 / 19%);
+      }
+      .exercice {
+        padding: 10px 10px;
+        margin-right: 2rem;
+        margin-bottom: 7px;
+        background-color: #fcfcfc;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+      }
+      li {
+        color: rgb(1, 1, 1);
+        font-size: 1.1rem;
+        padding: 0.5rem;
+      }
+      img {
+        width: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Objectif:</h2>
+    <p>
+      Se familiariser avec le langage HTML5 (balises sémantiques, liens internes
+      et externes, tableaux, formulaires, etc.)
+    </p>
+    <div class="exercice">
+      <h2>Exerice1:</h2>
+      <p>
+        Structurer le document html suivant par les balises sémantiques HTML5
+      </p>
+      <img src="../../images/img.jpg" alt="" />
+
+      <div class="example">
+        <a
+          onclick="setSrcCode(1)"
+          href="../htmlCourse/editor1.html"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+    <div class="exercice">
+      <h2>Exerice2:</h2>
+      <p>
+        Créer l’image ci-dessous sous le logiciel "paint " et nommer là
+        "image.bmp" :
+      </p>
+      <p>Les coordonnées du cercle : centre(60,40) et rayon=20</p>
+      <p>Les coordonnées du rectangle : (200,20) et (270,30)</p>
+      <p>Les coordonnées du triangle : (60,120), (160,60) et (200,120)</p>
+      <img src="../../images/img2.png" alt="" />
+      <p>
+        Nous voulons associer au cercle, au rectangle et au triangle de l’image
+        "dessin.bmp" les liens respectifs "cercle.com", "rectangle.com" et
+        "triangle.com" Ecrire le code HTML permettant de réaliser cette tâche.
+      </p>
+      <div class="example">
+        <a
+          onclick="setSrcCode(2)"
+          href="../htmlCourse/editor1.html"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+
+    <div class="exercice">
+      <h2>Exerice3:</h2>
+      <p>
+        Utiliser les principes (couleurs, tailles, tableaux, …) présentés en
+        cours pour créer le document "ex-tableaux.html" selon l’affichage
+        ci-dessous :
+      </p>
+
+      <img src="../../images/img3.jpg" alt="" />
+
+      <div class="example">
+        <a
+          onclick="setSrcCode(3)"
+          href="../htmlCourse/editor1.html"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+
+    <div class="exercice">
+      <h2>Exerice4:</h2>
+      <p>
+        1. Ecrire le code HTML qui correspond à la page web de la figure
+        ci-dessous tout en respectant les consignes suivantes :
+      </p>
+
+      <ol>
+        <li>Le titre est de niveau 1 et de couleur "blue".</li>
+        <li>
+          Cette page présente une liste de taille 4 présentant des liens vers
+          les différentes sections.
+        </li>
+        <li>Les différentes sections présentent des titres de niveau 2</li>
+        <li>
+          En cliquant sur chaque logo dans le tableau, le site officiel de
+          l’outil sera affiché :
+          <span>
+            JavaScript (
+            <a
+              disabled="true"
+              href="http://javascript.developpez.com/cours"
+              style="text-decoration: none; cursor: not-allowed"
+              >http://javascript.developpez.com/cours</a
+            >) et Applet Java(
+            <a
+              disabled="true"
+              href="http://chgi.developpez.com/java/applet/"
+              style="text-decoration: none; cursor: not-allowed"
+              >http://chgi.developpez.com/java/applet/</a
+            >)
+          </span>
+        </li>
+        <li>
+          En cliquant sur les mots HTML, XML et CSS dans le tableau, le site
+          officiel de chaque outil sera affiché :
+          <span>
+            HTML (
+            <a
+              disabled="true"
+              href="http://cyberzoide.developpez.com/html/"
+              style="text-decoration: none; cursor: not-allowed"
+              >http://cyberzoide.developpez.com/html/</a
+            >) XML (<a
+              disabled="true"
+              href="http://xml.developpez.com/cours/"
+              style="text-decoration: none; cursor: not-allowed"
+              >http://xml.developpez.com/cours//</a
+            >) et CSS (
+            <a
+              disabled="true"
+              href="http://css.developpez.com/cours/"
+              style="text-decoration: none; cursor: not-allowed"
+              >http://css.developpez.com/cours/</a
+            >)
+          </span>
+        </li>
+      </ol>
+      <img src="../../images/img4.PNG" alt="" />
+
+      <div class="example">
+        <a
+          href="../htmlCourse/editor1.html"
+          onclick="setSrcCode(4)"
+          onclick="setLocalSorage('exemple2',null,1)"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+
+    <div class="exercice">
+      <h2>Exerice5:</h2>
+      <p>Écrire un code HTML5 qui permet de créer le formulaire suivant:</p>
+      <img src="../../images/img5.jpg" alt="" />
+
+      <div class="example">
+        <a
+          href="../htmlCourse/editor1.html"
+          onclick="setSrcCode(5)"
+          target="_blank"
+        >
+          <button id="btn1">Get Solution</button></a
+        >
+      </div>
+    </div>
+    <script src="../../js/exercices.js"></script>
+  </body>
+</html>

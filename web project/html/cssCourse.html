@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/cssCourse.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body onload="getSRC();">
+    <!-- header section -->
+
+    <header class="header-active" id="header">
+      <a href="index.html" class="logo"
+        ><i class="fas fa-graduation-cap"><i class="name">developpy</i></i>
+      </a>
+      <nav id="nav" class="navbar">
+        <ul>
+          <li>
+            <a
+              onclick="actions(0,'w3shoolHTML');"
+              id="w3shoolHTML"
+              href="https://www.w3schools.com/"
+              target="_blank"
+              >W3schoolHTML</a
+            >
+          </li>
+          <li>
+            <a
+              id="exercices"
+              onclick="actions(0,'exercices');"
+              href="#Exercices"
+              >Exercices</a
+            >
+          </li>
+          <li>
+            <a
+              onclick="actions(0,'quiz');"
+              id="quiz"
+              href="#Quiz"
+              class="pad-16"
+              >Quiz</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="fas fa-bars" id="fa-bars"></div>
+    </header>
+
+    <div class="container">
+      <div class="sidebar" id="sidebar">
+        <a class="fab"> <i class="fab fa-css3-alt"></i></a>
+        <a id="introduction" href="#" onclick="actions(1,'introduction');"
+          >Introduction</a
+        >
+        <a id="historique" onclick="actions(1,'historique');" href="#"
+          >Historique
+        </a>
+        <a onclick="actions(1,'syntaxe');" id="syntaxe" href="#">Syntaxe</a>
+
+        <a onclick="actions(1,'style');" id="style" href="#"
+          >Appliquer un style</a
+        >
+        <a onclick="actions(1,'format');" id="format" href="#"
+          >Format des styles</a
+        >
+        <a onclick="actions(1,'props');" id="props" href="#">Propriétés CSS</a>
+        <a onclick="actions(1,'mode');" id="mode" href="#">Modes de sorties</a>
+      </div>
+    </div>
+    <div id="frameDiv">
+      <iframe name="frame" frameborder="0" id="frame"></iframe>
+    </div>
+
+    <!--  <div class="outer">
+      <div class="inner"><button class="previous">&lt Previous</button></div>
+      <div class="inner">
+        <button class="next">Next <i>&gt</i></button>
+      </div>
+    </div> -->
+
+    <div style="display: none" id="move">
+      <button id="previous" class="previous">&lt Previous</button>
+      <button id="next" class="next">Next <i>&gt</i></button>
+    </div>
+    <script src="../js/cssCourse.js"></script>
+  </body>
+</html>

@@ -1,0 +1,803 @@
+<html lang="en-US">
+  <head>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+  />
+    <script>
+      if (window.addEventListener) {
+        window.addEventListener("resize", browserResize);
+      } else if (window.attachEvent) {
+        window.attachEvent("onresize", browserResize);
+      }
+      var xbeforeResize = window.innerWidth;
+
+      function browserResize() {
+        var afterResize = window.innerWidth;
+        if (
+          (xbeforeResize < 970 && afterResize >= 970) ||
+          (xbeforeResize >= 970 && afterResize < 970) ||
+          (xbeforeResize < 728 && afterResize >= 728) ||
+          (xbeforeResize >= 728 && afterResize < 728) ||
+          (xbeforeResize < 468 && afterResize >= 468) ||
+          (xbeforeResize >= 468 && afterResize < 468)
+        ) {
+          xbeforeResize = afterResize;
+
+          if (document.getElementById("adngin-try_it_leaderboard-0")) {
+            adngin.queue.push(function () {
+              adngin.cmd.startAuction(["try_it_leaderboard"]);
+            });
+          }
+        }
+        if (window.screen.availWidth <= 768) {
+          restack(window.innerHeight > window.innerWidth);
+        }
+        fixDragBtn();
+
+      }
+      var fileID = "";
+    </script>
+    <style>
+      * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      body {
+        color: #000000;
+        margin: 0px;
+        font-size: 100%;
+      }
+      .trytopnav {
+        height: 48px;
+        overflow: hidden;
+        min-width: 380px;
+        position: absolute;
+        width: 100%;
+        top: 99px;
+        top: 130px;
+        background-color: #e7e9eb;
+      }
+      .topnav-icons {
+        margin-right: 8px;
+      }
+      .trytopnav a,
+      .trytopnav button {
+        color: #999999;
+      }
+     
+      #dragbar {
+        position: absolute;
+        cursor: col-resize;
+        z-index: 3;
+        padding: 5px;
+      }
+      #shield {
+        display: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        z-index: 4;
+      }
+      #framesize {
+        font-family: "Montserrat", "Source Sans Pro", sans-serif;
+        font-size: 14px;
+      }
+      #container {
+        background-color: #e7e9eb;
+        width: 100%;
+        overflow: auto;
+        position: absolute;
+        top: 144px;
+        top: 175px;
+        bottom: 0;
+        height: auto;
+      }
+      #textareacontainer,
+      #iframecontainer {
+        float: left;
+        height: 100%;
+        width: 50%;
+      }
+
+      #textarea,
+      #textarea2,
+      #iframe {
+        height: 100%;
+        width: 100%;
+        padding-bottom: 10px;
+        padding-top: 1px;
+      }
+      #textarea {
+        padding-left: 10px;
+        padding-right: 5px;
+      }
+      #iframe {
+        padding-left: 5px;
+        padding-right: 10px;
+        position: relative;
+      }
+    
+     
+      #textareaCode,
+      #textareaCode2 {
+        background-color: #ffffff;
+        font-family: consolas, Menlo, "courier new", monospace;
+        font-size: 15px;
+        height: 100%;
+        width: 100%;
+        padding: 8px;
+        resize: none;
+        border: none;
+        line-height: normal;
+        overflow: auto;
+      }
+
+      /**/
+
+      #filenamecontainer {
+        position: absolute;
+        text-align: center;
+        z-index: 4;
+        width: 100%;
+      }
+      #filenamecontainer span {
+        opacity: 0.9;
+        padding: 1px 6px;
+        font-family: Consolas;
+        background-color: #e7e9eb;
+        font-size: 16px;
+      }
+      body.darktheme #filenamecontainer span {
+        background-color: #555555;
+        color: #e7e9eb;
+      }
+
+
+      #iframeResult,
+      #iframeSource {
+        background-color: #ffffff;
+
+        height: 100%;
+        width: 100%;
+      }
+
+     
+      #textareacontainer.horizontal,
+      #iframecontainer.horizontal {
+        height: 50%;
+        float: none;
+        width: 100%;
+      }
+
+      #textarea.horizontal {
+        height: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      #iframe.horizontal {
+        height: 100%;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+      #container.horizontal {
+        min-height: 200px;
+        margin-left: 0;
+      }
+     
+      .w3-dropdown-content {
+        width: 350px;
+      }
+
+      #breadcrumb ul {
+        font-family: "Montserrat", "Source Sans Pro", sans-serif;
+        list-style: none;
+        display: inline-table;
+        padding-inline-start: 1px;
+        font-size: 12px;
+      margin-top: 5rem;
+      }
+      #breadcrumb li {
+        display: inline;
+      }
+      #breadcrumb a {
+        float: left;
+        background: #e7e9eb;
+        padding: 3px 10px 3px 20px;
+        position: relative;
+        margin: 0 5px 0 0;
+        text-decoration: none;
+        color: #555;
+      }
+      #breadcrumb a:after {
+        content: "";
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid #e7e9eb;
+        position: absolute;
+        right: -12px;
+        top: 0;
+        z-index: 1;
+      }
+      #breadcrumb a:before {
+        content: "";
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid #fff;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      #breadcrumb ul li:first-child a:before {
+        display: none;
+      }
+      #breadcrumb ul:last-child li {
+        padding-right: 5px;
+      }
+      #breadcrumb ul li a:hover {
+        background: #c63bfa;
+        color: #fff;
+      }
+      #breadcrumb ul li a:hover:after {
+        border-left-color: #c63bfa;
+        color: #fff;
+      }
+      #breadcrumb li:last-child {
+        display: inline-block !important;
+        margin-top: 3px !important;
+      }
+      #runbtn {
+        background-color: #c63bfa;
+        color: white;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 18px;
+        padding: 6px 25px;
+        margin-top: 4px;
+        border-radius: 5px;
+        word-spacing: 10px;
+        border:0;
+      }
+      #runbtn:hover {
+        background-color: #9513c5 !important;
+        color: white !important;
+        cursor: pointer;
+      }
+    
+     
+
+    
+
+     
+   
+      @media only screen and (max-device-width: 768px) {
+      .runbtn{
+        font-size: 12px;
+      }
+
+      }
+
+      
+   
+
+     
+
+      /**/
+      .fa {
+        padding: 10px 10px !important;
+      }
+      a.topnav-icons,
+      a.topnav-icons.fa-home,
+      a.topnav-icons.fa-menu,
+      button.topnav-icons.fa-adjust {
+        font-size: 28px !important;
+      }
+      .darktheme #breadcrumb li {
+        color: #fff;
+      }
+      .darktheme #breadcrumb a {
+        background: #616161;
+        background-color: #38444d;
+        color: #ddd;
+      }
+      .darktheme #breadcrumb a:after {
+        border-left: 12px solid #616161;
+        border-left: 12px solid #38444d;
+      }
+      .darktheme #breadcrumb a:before {
+        border-left: 12px solid rgb(40, 44, 52);
+        border-left: 12px solid #1d2a35;
+      }
+      .darktheme .currentcrumb {
+        color: #ddd;
+      }
+
+      body.darktheme {
+        background-color: rgb(40, 44, 52);
+        background-color: #1d2a35;
+      }
+   
+      body.darktheme .trytopnav {
+        background-color: #616161;
+        background-color: #38444d;
+        color: #dddddd;
+      }
+      body.darktheme #container {
+        background-color: #616161;
+        background-color: #38444d;
+      }
+      body.darktheme .trytopnav a {
+        color: #dddddd;
+      }
+      body.darktheme #textareaCode {
+        background-color: rgb(40, 44, 52);
+        color: #fff;
+      }
+
+     
+     
+      body.darktheme ::-webkit-scrollbar {
+        width: 12px;
+        height: 3px;
+      }
+      body.darktheme ::-webkit-scrollbar-track-piece {
+        background-color: #000;
+      }
+      body.darktheme ::-webkit-scrollbar-thumb {
+        height: 50px;
+        background-color: #616161;
+        background-color: #38444d;
+      }
+      body.darktheme ::-webkit-scrollbar-thumb:hover {
+        background-color: #aaaaaa;
+        background-color: #4b5b68;
+      }
+
+    
+    </style>
+
+
+  </head>
+  <body onload="getCurentContent();setThemeMode();">
+    <div id="breadcrumb">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a id="currentCourse" href="../htmlCourse.html">HTML</a></li>
+        <li id="currentPage">Try HTML</li>
+      </ul>
+    </div>
+
+    <div class="trytopnav">
+      <div class="w3-bar" style="overflow: auto;margin-left: 2rem;">
+      
+
+        <a
+          href="javascript:void(0);"
+          onclick="restack(currentStack)"
+          title="Change Orientation"
+          class="w3-button w3-bar-item w3-hide-small topnav-icons fa fa-rotate"
+          style="margin-top: -2px ;text-decoration: none;"
+          ></a
+        >
+        <a
+          href="javascript:void(0);"
+          onclick="retheme()"
+          title="Change Theme"
+          class="w3-button w3-bar-item topnav-icons fa fa-adjust"
+          style="margin-top: -2px;text-decoration: none;"
+          ></a
+        >
+
+        <button
+          id="runbtn"
+          class="w3-button w3-bar-item w3-hover-white w3-hover-text-green"
+          onclick="submitTryit(1);"
+        >
+          Run ❯
+        </button>
+      </div>
+    </div>
+
+    <div id="shield" style="display: none"></div>
+
+    <a
+      href="javascript:void(0)"
+      id="dragbar"
+      style="
+        width: 5px;
+        top: 175px;
+        left: 503.8px;
+        height: 535.6px;
+        cursor: col-resize;
+      "
+    ></a>
+    <div id="container">
+
+      <div
+        id="menuOverlay"
+        class="w3-overlay w3-transparent"
+        style="cursor: pointer; z-index: 4"
+      ></div>
+      <div id="textareacontainer">
+        <div id="textarea">
+          <div id="textareawrapper">
+            <div contenteditable="true"
+              autocomplete="off"
+              id="textareaCode"
+              wrap="logical"
+              spellcheck="false"
+              style="display: block; outline: none"
+            >
+&lt;!DOCTYPE html&gt;
+    &lt;&gt;
+    &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    
+    &lt;<span style="color: red;">h1</span>&gt;This is a Heading&lt;/h1&gt;
+    &lt;p&gt;This is a paragraph.&lt;/p&gt;
+    
+    &lt;/body&gt;
+    &lt;/html&gt;
+    
+    
+  </div>
+          </div>
+        </div>
+      </div>
+  <textarea style="display: none;" id="textCode"></textarea>
+      <div id="iframecontainer">
+        <div id="iframe">
+          <div id="iframewrapper">
+            <iframe
+              frameborder="0"
+              id="iframeResult"
+              name="iframeResult"
+              allowfullscreen="true"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+
+      function getCurentContent(){
+        const url="http://127.0.0.1:5500/web%20project/html/";
+       const page=localStorage.getItem('page');
+       const currentCourse=document.getElementById('currentCourse');
+       const currentPage=document.getElementById('currentPage');
+       if(page){
+         currentPage.innerHTML="Try "+page.substring(0,page.indexOf('C'));
+         currentCourse.innerHTML=page.substring(0,page.indexOf('C')).toLocaleUpperCase();
+         currentCourse.href=url+page+'.html';
+       }
+      }
+      function getLocalStorageCode(){
+        //localStorage.removeItem('codeExemple');
+       // const htmlCoreBeging = "<html>\n"
+        //const htmlCoreEnd = "\n</html>\n"
+
+       
+        var codeExemple= localStorage.getItem('codeExemple');
+        console.log("code: ", codeExemple)
+
+       document.getElementById('textareaCode').innerText=codeExemple;
+      }
+       getLocalStorageCode();
+      submitTryit();
+      function submitTryit(n) {
+    
+        
+        var text = document.getElementById("textareaCode").innerText;
+      
+        var ifr = document.createElement("iframe");
+        ifr.setAttribute("frameborder", "0");
+        ifr.setAttribute("id", "iframeResult");
+        ifr.setAttribute("name", "iframeResult");
+
+        ifr.setAttribute("allowfullscreen", "true");
+
+        document.getElementById("iframewrapper").innerHTML = "";
+        document.getElementById("iframewrapper").appendChild(ifr);
+
+        var ifrw = ifr.contentWindow
+          ? ifr.contentWindow
+          : ifr.contentDocument.document
+          ? ifr.contentDocument.document
+          : ifr.contentDocument;
+       
+        ifrw.document.open();
+        ifrw.document.write(text); 
+     /*    var scripts=[];
+        var ch="<script";
+        var s="<";
+        var ch1=s+"/script>";
+        const indexes = [...text.matchAll(new RegExp(ch, 'gi'))].map(a => a.index);
+        const indexes1 = [...text.matchAll(new RegExp(ch1, 'gi'))].map(a => a.index);
+        if(indexes.length==indexes1.length){
+          for(i=0;i<indexes.length;i++){
+            scripts.push(text.substring(indexes[i]+8,indexes1[i]))
+          }
+        }
+        console.log('scripts: ',scripts)  */ 
+      
+       // var test=scripts[0].replace(/^\s+|\s+$/g, ''); 
+        //console.log('test:',test) 
+  /*      
+        if(scripts&&scripts.length>0) {
+        try {
+        for(script in scripts){
+         try {
+         
+          ifrw.eval(script);
+         } catch (error) {
+          console.log('OMG');    
+         }
+        
+        }
+        } catch (error) {
+          ifrw.document.body.innerHTML="error";    
+
+            }
+        } */
+        ifrw.document.close();
+       
+      }
+
+
+      var currentStack = true;
+      if (
+        (window.screen.availWidth <= 768 &&
+          window.innerHeight > window.innerWidth) ||
+        "" == " horizontal"
+      ) {
+        restack(true);
+      }
+      function restack(horizontal) {
+        var tc, ic, t, i, c, f, sv, sh, d, b, height, flt, width;
+        tc = document.getElementById("textareacontainer");
+        ic = document.getElementById("iframecontainer");
+        t = document.getElementById("textarea");
+        i = document.getElementById("iframe");
+        c = document.getElementById("container");
+        sv = document.getElementById("stackV");
+        sh = document.getElementById("stackH");
+        b = document.getElementsByClassName("localhostoutercontainer");
+        tc.className = tc.className.replace("horizontal", "");
+        ic.className = ic.className.replace("horizontal", "");
+        t.className = t.className.replace("horizontal", "");
+        i.className = i.className.replace("horizontal", "");
+        c.className = c.className.replace("horizontal", "");
+        if (b[0]) {
+          b[0].className = b[0].className.replace("horizontal", "");
+        }
+        if (sv) {
+          sv.className = sv.className.replace("horizontal", "");
+        }
+        if (sv) {
+          sh.className = sh.className.replace("horizontal", "");
+        }
+        stack = "";
+        if (horizontal) {
+          tc.className = tc.className + " horizontal";
+          ic.className = ic.className + " horizontal";
+          t.className = t.className + " horizontal";
+          i.className = i.className + " horizontal";
+          c.className = c.className + " horizontal";
+          if (sv) {
+            sv.className = sv.className + " horizontal";
+          }
+          if (sv) {
+            sh.className = sh.className + " horizontal";
+          }
+          if (b[0]) {
+            b[0].className = b[0].className + " horizontal";
+          }
+          stack = " horizontal";
+          document.getElementById("textareacontainer").style.height = "50%";
+          document.getElementById("iframecontainer").style.height = "50%";
+          document.getElementById("textareacontainer").style.width = "100%";
+          document.getElementById("iframecontainer").style.width = "100%";
+          currentStack = false;
+        } else {
+          document.getElementById("textareacontainer").style.height = "100%";
+          document.getElementById("iframecontainer").style.height = "100%";
+          document.getElementById("textareacontainer").style.width = "50%";
+          document.getElementById("iframecontainer").style.width = "50%";
+          currentStack = true;
+        }
+        fixDragBtn();
+      
+      }
+
+      var dragging = false;
+      var stack;
+      function fixDragBtn() {
+        var textareawidth, leftpadding, dragleft, containertop, buttonwidth;
+        var containertop = Number(
+          w3_getStyleValue(document.getElementById("container"), "top").replace(
+            "px",
+            ""
+          )
+        );
+        if (stack != " horizontal") {
+          document.getElementById("dragbar").style.width = "5px";
+          textareasize = Number(
+            w3_getStyleValue(
+              document.getElementById("textareawrapper"),
+              "width"
+            ).replace("px", "")
+          );
+          leftpadding = Number(
+            w3_getStyleValue(
+              document.getElementById("textarea"),
+              "padding-left"
+            ).replace("px", "")
+          );
+          buttonwidth = Number(
+            w3_getStyleValue(
+              document.getElementById("dragbar"),
+              "width"
+            ).replace("px", "")
+          );
+          textareaheight = w3_getStyleValue(
+            document.getElementById("textareawrapper"),
+            "height"
+          );
+          dragleft =
+            textareasize + leftpadding + leftpadding / 2 - buttonwidth / 2;
+          document.getElementById("dragbar").style.top = containertop + "px";
+          document.getElementById("dragbar").style.left = dragleft + "px";
+          document.getElementById("dragbar").style.height = textareaheight;
+          document.getElementById("dragbar").style.cursor = "col-resize";
+        } else {
+          document.getElementById("dragbar").style.height = "5px";
+          if (window.getComputedStyle) {
+            textareawidth = window
+              .getComputedStyle(
+                document.getElementById("textareawrapper"),
+                null
+              )
+              .getPropertyValue("height");
+            textareaheight = window
+              .getComputedStyle(
+                document.getElementById("textareawrapper"),
+                null
+              )
+              .getPropertyValue("width");
+            leftpadding = window
+              .getComputedStyle(document.getElementById("textarea"), null)
+              .getPropertyValue("padding-top");
+            buttonwidth = window
+              .getComputedStyle(document.getElementById("dragbar"), null)
+              .getPropertyValue("height");
+          } else {
+            dragleft =
+              document.getElementById("textareawrapper").currentStyle["width"];
+          }
+          textareawidth = Number(textareawidth.replace("px", ""));
+          leftpadding = Number(leftpadding.replace("px", ""));
+          buttonwidth = Number(buttonwidth.replace("px", ""));
+          dragleft =
+            containertop + textareawidth + leftpadding + leftpadding / 2;
+          document.getElementById("dragbar").style.top = dragleft + "px";
+          document.getElementById("dragbar").style.left = "5px";
+          document.getElementById("dragbar").style.width = textareaheight;
+          document.getElementById("dragbar").style.cursor = "row-resize";
+        }
+      }
+      function dragstart(e) {
+        e.preventDefault();
+        dragging = true;
+        var main = document.getElementById("iframecontainer");
+      }
+      function dragmove(e) {
+        if (dragging) {
+          document.getElementById("shield").style.display = "block";
+          if (stack != " horizontal") {
+            var percentage = (e.pageX / window.innerWidth) * 100;
+            if (percentage > 5 && percentage < 98) {
+              var mainPercentage = 100 - percentage;
+              document.getElementById("textareacontainer").style.width =
+                percentage + "%";
+              document.getElementById("iframecontainer").style.width =
+                mainPercentage + "%";
+              fixDragBtn();
+            }
+          } else {
+            var containertop = Number(
+              w3_getStyleValue(
+                document.getElementById("container"),
+                "top"
+              ).replace("px", "")
+            );
+            var percentage =
+              ((e.pageY - containertop + 20) /
+                (window.innerHeight - containertop + 20)) *
+              100;
+            if (percentage > 5 && percentage < 98) {
+              var mainPercentage = 100 - percentage;
+              document.getElementById("textareacontainer").style.height =
+                percentage + "%";
+              document.getElementById("iframecontainer").style.height =
+                mainPercentage + "%";
+              fixDragBtn();
+            }
+          }
+       
+        }
+      }
+      function dragend() {
+        document.getElementById("shield").style.display = "none";
+        dragging = false;
+        var vend = navigator.vendor;
+        if (window.editor && vend.indexOf("Apple") == -1) {
+          window.editor.refresh();
+        }
+      }
+      if (window.addEventListener) {
+        document
+          .getElementById("dragbar")
+          .addEventListener("mousedown", function (e) {
+            dragstart(e);
+          });
+        document
+          .getElementById("dragbar")
+          .addEventListener("touchstart", function (e) {
+            dragstart(e);
+          });
+        window.addEventListener("mousemove", function (e) {
+          dragmove(e);
+        });
+        window.addEventListener("touchmove", function (e) {
+          dragmove(e);
+        });
+        window.addEventListener("mouseup", dragend);
+        window.addEventListener("touchend", dragend);
+        window.addEventListener("load", fixDragBtn);
+
+      }
+
+      function retheme() {
+        var cc = document.body.className;
+        if (cc.indexOf("darktheme") > -1) {
+          document.body.className = cc.replace("darktheme", "");
+          if (opener) {
+            opener.document.body.className = cc.replace("darktheme", "");
+          }
+          localStorage.setItem("preferredmode", "light");
+        } else {
+          document.body.className += " darktheme";
+          if (opener) {
+            opener.document.body.className += " darktheme";
+          }
+          localStorage.setItem("preferredmode", "dark");
+        }
+      }
+      function setThemeMode() {
+        var x = localStorage.getItem("preferredmode");
+        if (x == "dark") {
+          document.body.className += " darktheme";
+        }
+      };
+      
+   
+
+      function w3_getStyleValue(elmnt, style) {
+        if (window.getComputedStyle) {
+          return window.getComputedStyle(elmnt, null).getPropertyValue(style);
+        } else {
+          return elmnt.currentStyle[style];
+        }
+      }
+
+     
+
+ 
+    </script>
+
+</html>
